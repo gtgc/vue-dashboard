@@ -1,10 +1,19 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
+  <NavBar />
+
   <router-view />
 </template>
+<script>
+import "bulma/bulma.sass";
+import "vue-fontawesome";
+import NavBar from "./components/NavBar.vue";
+export default {
+  components: {
+    NavBar,
+  },
+};
+</script>
+
 
 <style lang="scss">
 #app {
@@ -19,11 +28,11 @@
   padding: 30px;
 
   a {
-    font-weight: bold;
-    color: #2c3e50;
+    color: inherit;
 
     &.router-link-exact-active {
-      color: #42b983;
+      font-weight: bold;
+      color: #2c3e50;
     }
   }
 }
